@@ -29,7 +29,7 @@ class userController extends Controller
                if (Auth::user()->is_Admin())
                return redirect('/home')->with('success', 'Login Success admin');
             else 
-            return 2;
+            return redirect('/customer/home')->with('success', 'Login Success user');
             }
      
             return 3;

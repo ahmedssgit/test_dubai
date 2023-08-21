@@ -26,7 +26,7 @@ return new class extends Migration
             array(
                 'name'=> 'admin',
                 'email' => 'admin@gmail.com',
-                'password' => '12345678',
+                'password' => Hash::make(12345678),
                 'is_admin' => '1'
                 
             )

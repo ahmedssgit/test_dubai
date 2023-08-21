@@ -34,23 +34,29 @@
         <section class="content">
             <div class="row">
                 <div class="col-sm-9 text-center">
-                    <a href="{{ URL::to('/') }}/products">
-                        <button>Add Products</button>
-                    </a>
-                    <hr>
-                </div>
-                <div class="col-sm-9 text-center">
-                    <a href="{{ URL::to('/') }}/categories">
-                        <button>Add Categories</button>
-                    </a>
-                    <hr>
-                </div>
-                <div class="col-sm-9 text-center">
-                    <a href="{{ URL::to('/') }}/sale">
-                        <button>Add Sale</button>
-                    </a>
-                    <hr>
-                </div>
+                    <a class="btn  action-btn btn--danger btn-outline-primary" href="{{route('admin.user.create')}}"
+                      title="add"> create user
+                      </a>
+                      <hr>
+                  </div>
+                  <div class="col-sm-9 text-center">
+                    <a class="btn  action-btn btn--danger btn-outline-primary" href="{{route('admin.template.create')}}"
+                      title="add"> create template
+                      </a>
+                      <hr>
+                  </div>
+                  <div class="col-sm-9 text-center">
+                    <a class="btn  action-btn btn--danger btn-outline-primary" href="{{route('admin.task.create')}}"
+                      title="add"> create task
+                      </a>
+                      <hr>
+                  </div>
+                  <div class="col-sm-9 text-center">
+                    <a class="btn  action-btn btn--danger btn-outline-primary" href="{{route('admin.project.create')}}"
+                      title="add"> create project
+                      </a>
+                      <hr>
+                  </div>
                 <hr>
                 <hr>
             </div>

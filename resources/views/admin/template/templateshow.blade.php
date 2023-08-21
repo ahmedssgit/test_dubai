@@ -20,21 +20,30 @@
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ URL::to('/') }}/home">Home</a></li>
-                            <li class="breadcrumb-item active">Show Users</li>
+                            <li class="breadcrumb-item active">Show template</li>
                         </ol>
                     </div>
                 </div>
             </div>
         </div>
         <!-- /.content-header -->
-
+        <div class="row">
+          <div class="col-sm-9 text-center">
+            <a class="btn  action-btn btn--danger btn-outline-primary" href="{{route('admin.template.create')}}"
+              title="add"> create template
+              </a>
+              <hr>
+          </div>
+         
+      
+      </div>
 
   <!-- /.row -->
   <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Users Table</h3>
+                <h3 class="card-title">template Table</h3>
 
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
@@ -51,28 +60,29 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                    <th></th>
-                      <th>ID</th>
-                      <th>name</th>
-                      <th>Email</th>
-                      
-                      <th>action</th>
+                      <th>Template ID</th>
+                      <th>Template Title</th>
+                      <th>Task ID</th>
+                      <th>Task Title</th>
+                      <th>Task Description</th>
+                      <th>Due Date</th>
                       
 
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach ($users as $i) 
+                    @foreach ($templates as $template)
+                    @foreach ($template->tasks as $task)
                     <tr>
-                      <td></td>
-                      <td> <?php  echo "$i->id"; ?></td>
-                      <td> <?php  echo "$i->name"; ?></td>
-                      <td> <?php  echo "$i->email"; ?></td>
-                    
-                      <td><a href = {{"delete_user/".$i['id']}}> delete</a>
-                      <a href = {{"show_user/".$i['id']}}> update </a></td>
-                    </tr>
-                    @endforeach
+                      <td>{{ $template->id }}</td>
+                      <td>{{ $template->title }}</td>
+                      <td>{{ $task->id }}</td>
+                      <td>{{ $task->title }}</td>
+                      <td>{{ $task->description }}</td>
+                      <td>{{ $task->due_date }}</td>
+                  </tr>
+                  @endforeach
+                  @endforeach
 	                      
                                
                   </tbody>
